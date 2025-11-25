@@ -19,7 +19,7 @@ import {
 
 //     res.status(200).json({ expenses: userExpenses.expenses });
 //   } catch (error) {
-//     zodError(error);
+//     zodError(error, res);
 //     res.status(500).json({ message: "Something went wrong" });
 //   }
 // };
@@ -37,7 +37,7 @@ export const getSingleExpense = async (req, res) => {
 
     res.status(200).json({ data: expense });
   } catch (error) {
-    zodError(error);
+    zodError(error, res);
     res.status(500).json({ message: "Something went wrong" });
   }
 };
@@ -68,7 +68,7 @@ export const createExpense = async (req, res) => {
       .status(201)
       .json({ data: saveExpense, message: "Expense added successfully" });
   } catch (error) {
-    zodError(error);
+    zodError(error, res);
     res.status(500).json({ message: "Something went wrong" });
   }
 };

@@ -6,7 +6,7 @@ import {
   getAllUserExpensesIncludesFilter,
   getSingleExpense,
   updateExpense,
-} from "../controllers/expenses.controller";
+} from "../controllers/expenses.controller.js";
 
 const router = Router();
 

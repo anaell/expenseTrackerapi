@@ -31,7 +31,7 @@ export const signup = async (req, res) => {
       .status(201)
       .json({ token: jwtToken, message: "User created successfully" });
   } catch (error) {
-    zodError(error);
+    zodError(error, res);
     res.status(500).json({ message: "Something went wrong" });
   }
 };
@@ -63,7 +63,7 @@ export const login = async (req, res) => {
     const jwtToken = jwtGenerator(existingUser);
     res.status(200).json({ token: jwtToken, message: "login successful" });
   } catch (error) {
-    zodError(error);
+    zodError(error, res);
     res.status(500).json({ message: "Something went wrong" });
   }
 };
