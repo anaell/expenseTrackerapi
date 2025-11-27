@@ -1,6 +1,5 @@
 import { User } from "../models/user.model.js";
 import bcrypt from "bcryptjs";
-import { ZodError } from "zod";
 import { authValidator } from "../validator/auth.validator.js";
 import jwtGenerator from "../utils/jwt-generator.js";
 import { zodError } from "../utils/zoderror.js";
